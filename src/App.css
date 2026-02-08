@@ -1,0 +1,134 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d978e3;
+  margin: 0;
+  padding: 20px;
+}
+.inpuut {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 120px auto;             
+  background-color: #FF52A0;
+  border-radius: 20px;
+  border: solid 7px #860ca7;
+  padding: 40px;
+  font: color rgb(0, 0, 0);
+  width: 350px;                   
+}
+.text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgb(232, 161, 129);
+  font-size: 16px;
+}
+p {
+  margin: 0;
+  font-weight: bold;
+  font-style: oblique;
+  text-align: center;
+}
+.upload-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #f65618;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+  width: 100%;
+}
+
+.upload-btn:hover {
+  background: #FFA47F;
+}
+
+.preview-img {
+  display: block;
+  margin-top: 15px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px dashed #ccc;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .inpuut {
+    margin: 20px auto;        
+    width: 100%;              
+    max-width: 420px;       
+    padding: 25px;
+    border-radius: 16px;
+  }
+
+  .text {
+    font-size: 16px;         
+    padding: 12px;
+  }
+
+  .upload-btn {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .preview-img {
+    width: 100%;            
+    max-width: 250px;
+    margin: 10px auto;
+  }
+}
+.app{
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.submit-btn{
+  display: inline-block;
+  padding: 12px 20px;
+  background: #7c049a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+  width: 50%;
+  border: solid 5px #67047a;
+}
+.submit-btn:hover {
+  background: #520460;
+ 
+}
+.product{
+  background-color: #15173D;
+  border-radius: 20px;
+  border: solid 7px #982598;
+  padding: 50px;
+  width: 350px;
+display: flex;
+flex-direction: column;
+margin: 50px auto;
+align-items: center;
+justify-content: center;
+}
+.pic{
+  border-radius: 10px;
+  border: 2px dashed #ccc;
+}

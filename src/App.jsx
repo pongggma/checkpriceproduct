@@ -2,30 +2,33 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
+  const [search, setSearch] = useState("")
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
   const [image, setImage] = useState(null)
   const [products, setProducts] = useState([])
   const [editId, setEditId] = useState(null)
-
-  // LOAD FROM LOCALSTORAGE
   useEffect(() => {
     const storedProducts = localStorage.getItem("products")
     if (storedProducts) {
       setProducts(JSON.parse(storedProducts))
     }
   }, [])
-
-  // SAVE TO LOCALSTORAGE
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products))
   }, [products])
 
-  function handleImageChange(e) {
-    const file = e.target.files[0]
-    if (!file) return
-    setImage(URL.createObjectURL(file))
+ function handleImageChange(e) {
+  const file = e.target.files[0]
+  if (!file) return
+
+  const reader = new FileReader()
+  reader.onloadend = () => {
+    setImage(reader.result)
   }
+  reader.readAsDataURL(file)
+}
+
 
   function handleSubmit() {
     if (!name || !price || !image) return
@@ -98,6 +101,14 @@ function App() {
 
       <div className="card">
         <h2>Product Preview</h2>
+        <div className="search-box">
+  <input
+    className="text"
+    placeholder="🔍 ค้นหาสินค้า..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+  />
+</div>
 
         {products.map(product => (
           <div className="product" key={product.id}>
